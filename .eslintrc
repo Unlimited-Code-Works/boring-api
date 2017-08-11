@@ -4,8 +4,12 @@
   "rules": {
     // Additional, per-project rules...
     "strict": 0,
+    // 关闭不允许console输出
     "no-console": "off",
-    "switch-colon-spacing": 0
+    // 等号=左右两边空格
+    "switch-colon-spacing": 0,
+    // 关闭方法前空格
+    "space-before-function-paren": 0
   },
   env: {
     node: true
