@@ -9,6 +9,7 @@
     "eslint": "3.x",
     "eslint-config-google": "^0.9.1",
     "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
     "mongoose": "^4.11.4"
   }
 }
