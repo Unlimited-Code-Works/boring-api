@@ -1,0 +1,13 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "parser": "babel-eslint",
+  "rules": {
+    // Additional, per-project rules...
+    "strict": 0,
+    "no-console": "off",
+    "switch-colon-spacing": 0
+  },
+  env: {
+    node: true
+  },
+}
