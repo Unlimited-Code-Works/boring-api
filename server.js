@@ -1,5 +1,6 @@
 import app from './src/app';
+import { port } from './src/config';
 
-app.listen(3000);
+app.listen(port);
 
-console.info('app listen on port 3000');
+console.info(`app listen on port ${port}`);
