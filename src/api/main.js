@@ -8,4 +8,5 @@ router.get('/', async(ctx) => {
   };
 });
 
-export default router;
+// export default router; // 这种外部在require时需要 .default来取到值
+module.exports = router;

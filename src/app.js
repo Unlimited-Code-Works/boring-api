@@ -1,13 +1,16 @@
 import Koa from 'koa';
-import main from './api/main';
+import path from 'path';
+import fs from 'fs';
 
 const app = new Koa();
 
-app.use(main.routes());
+// find all api under src/api/
+const apiDir = path.resolve(__dirname, './api');
+const apiFiles = fs.readdirSync(apiDir);
 
-// response
-app.use((ctx) => {
-  ctx.body = 'Hello Koa';
+apiFiles.forEach((file) => {
+  const module = require(`${apiDir}/${file}`);
+  app.use(module.routes());
 });
 
-app.listen(3000);
+export default app;
