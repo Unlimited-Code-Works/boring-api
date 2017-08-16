@@ -10,6 +10,13 @@ const {
 
 const defaults = {
   port: PORT,
+  jwt: {
+    secret: 'boring',
+    options: {
+      expiresIn: '30 days',
+    },
+    signUrl: ['/main/signIn', '/main/signUp'],
+  },
 };
 
 // export default defaults;

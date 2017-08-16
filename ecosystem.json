@@ -1,0 +1,42 @@
+{
+  "apps": [{
+    "name": "boring",
+    "script": "index.js",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "env": {
+      "COMMON_VARIABLE": "true"
+    },
+    // Environment variables injected when starting with --env production
+    "env_production": {
+      "NODE_ENV": "production"
+    },
+    "env_development": {
+      "NODE_ENV": "development"
+    }
+  }],
+
+  "deploy": {
+    "dev": {
+      "user": "vicer",
+      "host": "10.8.8.8",
+      "ref": "origin/4.0",
+      "repo": "git@github.com:wanmendaxue/allus-api.git",
+      "path": "/home/vicer/node/allus-api",
+      "post-deploy": ". ~/.zshrc; yarn && pm2 startOrRestart ecosystem.json --env development",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "production": {
+      "user": "deploy",
+      "host": "www.wanmen.org",
+      "ref": "origin/4.0",
+      "repo": "git@github.com:wanmendaxue/allus-api.git",
+      "path": "/data/www/node/allus-api-4.0",
+      "post-deploy": ". ~/.zshrc; yarn && pm2 startOrRestart ecosystem.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
