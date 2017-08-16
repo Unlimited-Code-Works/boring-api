@@ -9,7 +9,9 @@
     // 等号=左右两边空格
     "switch-colon-spacing": 0,
     // 关闭方法前空格
-    "space-before-function-paren": 0
+    "space-before-function-paren": 0,
+    // object {} 后跟空格
+    "object-curly-spacing": 0,
   },
   env: {
     node: true
