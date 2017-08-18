@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 import { jwt as jwtConf } from '../config/index';
 import { UNAUTHORIZED } from 'http-status';
 
-// grant jwt token (only: signIn or signUp)
 export default async(ctx, next) => {
   try {
     await next();

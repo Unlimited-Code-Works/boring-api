@@ -1,12 +1,12 @@
 import Koa from 'koa';
 import path from 'path';
 import fs from 'fs';
-import jwt from './middleware/jwt';
+import jwtEncoder from './middleware/jwt-encoder';
 import jwtDecoder from './middleware/jwt-decoder';
 
 const app = new Koa();
 app
-  .use(jwt)
+  .use(jwtEncoder)
   .use(jwtDecoder);
 
 // find all api under src/api/
