@@ -5,5 +5,8 @@ dev:
 	# cmd is:
 	pm2-dev start index.js
 
-prod:
-	pm2 start index.js
+env-dev:
+	pm2 startOrRestart ecosystem.json --env development
+
+env-prod:
+	pm2 startOrRestart ecosystem.json --env production

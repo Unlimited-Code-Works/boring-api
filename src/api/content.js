@@ -11,8 +11,9 @@ router.get('/', async(ctx) => {
 });
 
 router.get('/test', async(ctx) => {
+  const env = process.env.NODE_ENV;
   ctx.body = {
-    'jwt': 'pass',
+    env,
   };
 });
 
