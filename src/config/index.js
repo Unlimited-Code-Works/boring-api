@@ -6,6 +6,7 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 const {
   PORT,
+  DB_URL,
 } = process.env;
 
 const defaults = {
@@ -16,6 +17,16 @@ const defaults = {
       expiresIn: '30 days',
     },
     signUrl: ['/main/signIn', '/main/signUp'],
+  },
+  db: {
+    url: DB_URL,
+    options: {
+      // http://mongodb.github.io/node-mongodb-native/2.1/api/Server.html
+      poolSize: 5, // 5 as default
+      socketOptions: {
+        connectTimeoutMS: 9000,
+      },
+    },
   },
 };
 
