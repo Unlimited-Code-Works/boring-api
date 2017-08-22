@@ -2,7 +2,6 @@ import Router from 'koa-router';
 import jwt from '../middleware/jwt';
 
 const router = new Router({prefix: '/content'});
-// router.use(jwt.unless({ path: ['/main/'] }));
 router.use(jwt.unless({ method: ['GET'] }));
 
 router.get('/', async(ctx) => {

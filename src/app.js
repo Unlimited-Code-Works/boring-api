@@ -5,9 +5,11 @@ import jwtEncoder from './middleware/jwt-encoder';
 import jwtDecoder from './middleware/jwt-decoder';
 
 const app = new Koa();
+
 app
   .use(jwtEncoder)
   .use(jwtDecoder);
+
 
 // find all api under src/api/
 const apiDir = path.resolve(__dirname, './api');
